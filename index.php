@@ -4,14 +4,14 @@ require 'vendor/autoload.php';
 
 class TryMongoDBClass {
 
-    public $mongodb;
-    public $db;
+    private $mongodb;
+    private $db;
 
-    public $auth = '';
-    public $host = '127.0.0.1';
-    public $port = '27017';
-    public $authDB = '';
-    public $dbName = 'demo';
+    private $auth = '';
+    private $host = '127.0.0.1';
+    private $port = '27017';
+    private $authDB = '';
+    private $dbName = 'demo';
 
     public function __construct() {
 
@@ -57,7 +57,7 @@ class TryMongoDBClass {
             ];
         }
 
-        return json_decode(json_encode($arr));
+        return $arr;
     }
 
     public function search($collection, $arrSearchObject) {
